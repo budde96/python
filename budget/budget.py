@@ -1,0 +1,15 @@
+def main():
+    gross = float(input("Gross salary: "))
+    tax = float(input("Tax rate(percentage): "))
+    pension_rate = float(input("Second pillar(percentage): "))
+    pension_extra = float(input("Third pillar: "))
+    investments = float(input("Investments: "))
+    rent = float(input("Rent: "))
+    food = float(input("Food: "))
+    bills = float(input("Bills: "))
+    debt = float(input("Debts: "))
+    net = gross * (1 - (tax / 100))
+    pension_total = pension_extra + (gross * (pension_rate / 100))
+    left = net - pension_total - investments - rent - food - bills - debt
+    print(f"Your net income is {net}€\nAfter paying:\n{pension_total}€ into your pensions,\n{investments}€ in investments\n{rent}€ in rent,\n{food}€ for food,\n{bills}€ in bills,\n{debt}€ into debts.\nYou have {left}€ left.")
+main()
